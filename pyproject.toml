@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "yandex-iot-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for the Yandex Smart Home (IoT) API: list and control devices, run scenarios, power-cycle smart sockets"
 readme = "README.md"
 license = "MIT"
