@@ -1,7 +1,7 @@
 # yandex-iot-mcp
 
 MCP ([Model Context Protocol](https://modelcontextprotocol.io)) server for the
-[Yandex Smart Home IoT API](https://yandex.ru/dev/iot/doc/en/concepts/quickstart).
+[Yandex Smart Home IoT API](https://yandex.ru/dev/dialogs/smart-home/doc/en/concepts/platform-about).
 Lets AI assistants (Claude Code, Claude Desktop, and any other MCP client)
 inspect and control devices connected to Yandex Smart Home / Alice.
 
@@ -9,8 +9,9 @@ inspect and control devices connected to Yandex Smart Home / Alice.
 
 | Tool | Description |
 | --- | --- |
-| `list_devices` | All devices with rooms, types, capabilities and current state |
-| `get_device` | Full state of one device |
+| `list_devices` | All devices with rooms, types, capabilities and sensor values |
+| `list_groups` | Device groups from the Yandex Home app |
+| `get_device` | Full state of one device, including online/offline |
 | `turn_on` / `turn_off` | On/off for sockets, lights, switches |
 | `power_cycle` | Off → wait N seconds → on. Hard-reset gear plugged into a smart socket |
 | `device_action` | Any capability action (range, mode, toggle, color_setting…) |
@@ -30,7 +31,8 @@ inspect and control devices connected to Yandex Smart Home / Alice.
 ### Claude Code
 
 ```bash
-claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- uvx yandex-iot-mcp
+claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- \
+  uvx --from git+https://github.com/ssubbotin/yandex-iot-mcp yandex-iot-mcp
 ```
 
 ### Claude Desktop
@@ -40,7 +42,7 @@ claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- uvx yandex-iot-mcp
   "mcpServers": {
     "yandex-iot": {
       "command": "uvx",
-      "args": ["yandex-iot-mcp"],
+      "args": ["--from", "git+https://github.com/ssubbotin/yandex-iot-mcp", "yandex-iot-mcp"],
       "env": { "YANDEX_IOT_TOKEN": "<token>" }
     }
   }
