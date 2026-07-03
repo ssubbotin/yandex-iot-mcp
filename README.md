@@ -1,7 +1,7 @@
 # yandex-iot-mcp
 
 MCP ([Model Context Protocol](https://modelcontextprotocol.io)) server for the
-[Yandex Smart Home IoT API](https://yandex.ru/dev/dialogs/smart-home/doc/en/concepts/platform-about).
+[Yandex Smart Home IoT API](https://yandex.ru/dev/dialogs/smart-home/) ([API reference](https://yandex.ru/dev/dialogs/smart-home/doc/en/concepts/platform-user-info)).
 Lets AI assistants (Claude Code, Claude Desktop, and any other MCP client)
 inspect and control devices connected to Yandex Smart Home / Alice.
 
