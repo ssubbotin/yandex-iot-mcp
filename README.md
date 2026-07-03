@@ -31,8 +31,7 @@ inspect and control devices connected to Yandex Smart Home / Alice.
 ### Claude Code
 
 ```bash
-claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- \
-  uvx --from git+https://github.com/ssubbotin/yandex-iot-mcp yandex-iot-mcp
+claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- uvx yandex-iot-mcp
 ```
 
 ### Claude Desktop
@@ -42,7 +41,7 @@ claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- \
   "mcpServers": {
     "yandex-iot": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/ssubbotin/yandex-iot-mcp", "yandex-iot-mcp"],
+      "args": ["yandex-iot-mcp"],
       "env": { "YANDEX_IOT_TOKEN": "<token>" }
     }
   }
@@ -55,6 +54,12 @@ claude mcp add yandex-iot --env YANDEX_IOT_TOKEN=<token> -- \
 
 The assistant finds the socket via `list_devices` and calls
 `power_cycle(device_id, off_seconds=10)`.
+
+### From source
+
+```bash
+uvx --from git+https://github.com/ssubbotin/yandex-iot-mcp yandex-iot-mcp
+```
 
 ## Development
 
